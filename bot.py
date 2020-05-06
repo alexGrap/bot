@@ -1,8 +1,10 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import apiai
 import json
+import os
 
-updater = Updater('1291839879:AAGNY9CxjlX4InYOvqi0uQOA_soVUiE0R6s', use_context=True)
+token = os.environ.get('BOT_TOKEN')
+updater = Updater(token, use_context=True)
 dispatcher = updater.dispatcher
 
 
