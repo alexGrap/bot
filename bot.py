@@ -2,6 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import apiai
 import json
 import os
+import time
 
 token = os.environ.get('BOT_TOKEN')
 updater = Updater(token, use_context=True)
@@ -25,6 +26,7 @@ def text_Message(bot, update):
         bot.send_message(chat_id=update.message.chat_id, text=response)
     else:
         bot.send_message(chat_id=update.message.chat_id, text='Я Вас не совсем понял!')
+    time.sleep(0.5)
 
 
 start_command_handler = CommandHandler('start', start_Command)
